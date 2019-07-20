@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <title>Weather App</title>
+   <title>Weather App</title>
 </head>
 <body>
 <div class="container">
@@ -28,6 +29,8 @@
         <script id="city-template" type="text/x-handlebars-template">
             {{#each this}}
              <div class="cityData">
+                <!-- <div class="save">+</div>
+                <div class="delete"> <i class="far fa-trash-alt"></i> </div> -->
                 <div class="temperature"> {{this.temperature}} °C</div>
                 <div class="conditionPic"><img class="img" src="{{this.conditionPic}}"></div>
                 <div class="name">{{this.name}}</div>

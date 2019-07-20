@@ -36,7 +36,7 @@ margin-top: 5px;
     margin-bottom: 3px;
     margin-bottom: 3px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 3fr;
     grid-template-rows: 4fr, 2fr;
 }
 .temperature{
@@ -67,7 +67,7 @@ margin-top: 5px;
     padding: 14px 21px;
     border: 2px solid #68adb0;
     border-radius: 62px;
-    background: #95f7fc;
+    background-color: rgba(4, 131, 216, 0.2);
     background: -webkit-gradient(linear, left top, left bottom, from(#95f7fc), to(#68adb0));
     background: -moz-linear-gradient(top, #95f7fc, #68adb0);
     background: linear-gradient(to bottom, #95f7fc, #68adb0);
@@ -78,29 +78,11 @@ margin-top: 5px;
     font: normal normal bold 6px trebuchet ms;
     color: #000000;
     text-decoration: none;
-    cursor: pointer; 
-}
-.bttn:hover,
-.bttn:focus {
-    cursor: pointer; 
-    border: 2px solid #95f7fc;
-    background: #b3ffff;
-    background: -webkit-gradient(linear, left top, left bottom, from(#b3ffff), to(#7dd0d3));
-    background: -moz-linear-gradient(top, #b3ffff, #7dd0d3);
-    background: linear-gradient(to bottom, #b3ffff, #7dd0d3);
-    color: #000000;
-    text-decoration: none;
-}
-.bttn:active {
-    cursor: pointer; 
-    background: #68adb0;
-    background: -webkit-gradient(linear, left top, left bottom, from(#68adb0), to(#68adb0));
-    background: -moz-linear-gradient(top, #68adb0, #68adb0);
-    background: linear-gradient(to bottom, #68adb0, #68adb0);
+
 }
 .bttn:before{
-    content:  "\0000a0";
     cursor: pointer; 
+    content:  "\0000a0";
     display: inline-block;
     height: 24px;
     width: 24px;
