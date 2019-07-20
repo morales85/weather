@@ -3,16 +3,34 @@ class TempManager {
         this.cityData = []
     }
 
-getDataFromDB(){
-    $.get('/cities'), function(city){
-        if(city){
-this.cityData = city
-    }}
+async getDataFromDB(){
+    let data = await $.get('/cities')
+    this.cityData = data
 }
 
 async getCityData(cityName){
-    let city = await $.get(`/city/:${cityName}`)
-    this.cityData.push(city)
-}}
+    let data = await $.get(`/city/:${cityName}`)
+    this.cityData.push(data)
+    }
 
 
+// saveCity(cityName) {
+//     for (let city of this.cityData) {
+//         if (city.name == cityName) {
+//             $.post('/city', city)
+//         }
+//     }
+// }
+
+// removeCity(cityName){
+//     $.ajax({
+//         method: "DELETE",
+//         url: `/city/:${cityName}`,
+//         success: function(){
+
+//         }
+//     })
+// }
+
+
+}

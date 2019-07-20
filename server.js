@@ -1,9 +1,9 @@
-const bodyParser = require('body-parser')
 const express = require('express')
-const moment = require('moment')
 const app = express()
+const moment = require('moment')
 const path = require('path')
 const api = require('./server/routes/api')
+const bodyParser = require('body-parser')
 const router = express.Router()
 const mongoose = require('mongoose')
 
