@@ -13,5 +13,15 @@ await tempmanager.getCityData(weatherInput)
 renderer.render(tempmanager.cityData)
 }
 
+$('.cities').on('click', '.save', function(){
+    let cityName = $(this).closest('.cityData').find('.name').text()
+    tempmanager.saveCity(cityName)
+    loadPage()
+})
 
+$('.cities').on('click', '.delete', function(){
+    let cityName = $(this).closest('.cityData').find('.name').text()
+    tempmanager.removeCity(cityName)
+    loadPage()
+})
 

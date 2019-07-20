@@ -1,11 +1,23 @@
 body{
     background-image: url("/img/mario-taferner-g4LWKt6ureY-unsplash.jpg");
     background-repeat:no-repeat;
-    background-size:100vh
+    background-size:100vh;
+    font-family: 'Montserrat', sans-serif;
+
 }
-.weather-input {
+.weather-input:focus  {
     background-color: transparent;
-    border: 0px solid;
+    outline-width: 0;
+    border-bottom:solid green 2px;
+    height: 5vh;
+    width: 75%;
+    text-align: center;
+    margin-top: 2vh;
+    color: #000000
+}
+.weather-input  {
+    background-color: transparent;
+    border: 0px;
     border-bottom:solid green 2px;
     height: 5vh;
     width: 75%;
@@ -14,7 +26,41 @@ body{
     color: #000000
 }
 
+.cities{
+margin-top: 5px;
+}
+
+.cityData{
+    border: 1px solid #95f7fc;
+    background-color: rgba(4, 131, 216, 0.2);
+    margin-bottom: 3px;
+    margin-bottom: 3px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr, 2fr;
+}
+.temperature{
+    justify-self: center;
+    font-size: 5vh;
+    margin-top: 1vh;
+}
+.name{
+    justify-self: center;
+    font-size: 3vh;
+
+}
+.conditionPic{
+    justify-self: center;
+    align-content: center;
+    
+}
+.conditon{
+    font-size: 3vh;
+    justify-self: center;
+}
+
 .bttn {
+    cursor: pointer; 
     display: inline-block;
     text-align: center;
     vertical-align: middle;
@@ -36,6 +82,7 @@ body{
 }
 .bttn:hover,
 .bttn:focus {
+    cursor: pointer; 
     border: 2px solid #95f7fc;
     background: #b3ffff;
     background: -webkit-gradient(linear, left top, left bottom, from(#b3ffff), to(#7dd0d3));
@@ -45,6 +92,7 @@ body{
     text-decoration: none;
 }
 .bttn:active {
+    cursor: pointer; 
     background: #68adb0;
     background: -webkit-gradient(linear, left top, left bottom, from(#68adb0), to(#68adb0));
     background: -moz-linear-gradient(top, #68adb0, #68adb0);
@@ -52,6 +100,7 @@ body{
 }
 .bttn:before{
     content:  "\0000a0";
+    cursor: pointer; 
     display: inline-block;
     height: 24px;
     width: 24px;

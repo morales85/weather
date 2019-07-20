@@ -14,23 +14,23 @@ async getCityData(cityName){
     }
 
 
-// saveCity(cityName) {
-//     for (let city of this.cityData) {
-//         if (city.name == cityName) {
-//             $.post('/city', city)
-//         }
-//     }
-// }
+saveCity(cityName) {
+    for (let city of this.cityData) {
+        if (city.name == cityName) {
+            $.post('/city', city)
+        }
+    }
+}
 
-// removeCity(cityName){
-//     $.ajax({
-//         method: "DELETE",
-//         url: `/city/:${cityName}`,
-//         success: function(){
+removeCity(cityName){
+    $.ajax({
+        method: "DELETE",
+        url: `/city/:${cityName}`,
+        success: function(){
 
-//         }
-//     })
-// }
+        }
+    })
+}
 
 
 }
