@@ -3,7 +3,6 @@ body{
     background-repeat:no-repeat;
     background-size:100vh;
     font-family: 'Montserrat', sans-serif;
-
 }
 .weather-input:focus  {
     background-color: transparent;
@@ -32,7 +31,7 @@ margin-top: 5px;
 
 .cityData{
     border: 1px solid #95f7fc;
-    background-color: rgba(4, 131, 216, 0.2);
+    background-color: rgba(4, 131, 216, 0.4);
     margin-bottom: 3px;
     margin-bottom: 3px;
     display: grid;
