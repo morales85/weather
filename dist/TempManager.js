@@ -17,6 +17,7 @@ async getCityData(cityName){
 saveCity(cityName) {
     for (let city of this.cityData) {
         if (city.name == cityName) {
+            alert(cityName + ' was added to your favourites')
             $.post('/city', city)
         }
     }
@@ -25,8 +26,9 @@ saveCity(cityName) {
 removeCity(cityName){
     $.ajax({
         method: "DELETE",
-        url: `/city/:${cityName}`,
+        url: `/city/${cityName}`,
         success: function(){
+            alert(cityName + ' was removed from your favourites')
 
         }
     })

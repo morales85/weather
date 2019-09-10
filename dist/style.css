@@ -1,7 +1,8 @@
 body{
     background-image: url("/img/mario-taferner-g4LWKt6ureY-unsplash.jpg");
     background-repeat:no-repeat;
-    background-size:100vh;
+    background-size: cover;
+    background-attachment: fixed;
     font-family: 'Montserrat', sans-serif;
 }
 .weather-input:focus  {
@@ -35,27 +36,54 @@ margin-top: 5px;
     margin-bottom: 3px;
     margin-bottom: 3px;
     display: grid;
-    grid-template-columns: 3fr 3fr;
-    grid-template-rows: 4fr, 2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr, 2fr 1fr;
+    grid-template-areas:
+    "t p"
+    "t p"
+    "t p"
+    "t p"
+    "n c"
+    "n c"
+    "u u"
 }
 .temperature{
     justify-self: center;
     font-size: 5vh;
     margin-top: 1vh;
+    grid-area: t;
 }
 .name{
     justify-self: center;
     font-size: 3vh;
-
+    grid-area: n;
 }
 .conditionPic{
     justify-self: center;
     align-content: center;
+    grid-area: p;
     
 }
 .conditon{
     font-size: 3vh;
     justify-self: center;
+    grid-area: c;
+}
+
+.updatedAt{
+    grid-area: u;
+    justify-self: center;
+}
+
+#save{
+    color:green;
+    justify-self: center;
+    cursor: pointer;
+}
+#delete{
+    color:red;
+    justify-self: center;
+    cursor: pointer;
 }
 
 .bttn {

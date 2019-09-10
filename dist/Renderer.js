@@ -6,5 +6,4 @@ class Renderer {
         const someHTML = template(cityData)
         $('.cities').append(someHTML)
     }
-
 }

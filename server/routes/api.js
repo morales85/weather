@@ -2,22 +2,31 @@ const express = require('express')
 const router = express.Router()
 const City = require('../model/City')
 const request = require('request')
+const moment = require('moment')
+
+
+
+
 
 
 router.get('/city/:cityName', function(req, res){
     let cityName = req.params.cityName
     request(`http://api.apixu.com/v1/current.json?key=6f7b00dbd3454f8fa1332803191807&q=${cityName}`, function(err, respond, body) {
     let cityInfo = JSON.parse(body || "{}")
+    if(cityInfo.location){
+        let updatedAt = moment(cityInfo.current.last_updated, 'YYYY-MM-DD HH:mm.sss').format('DD.MM.YYYY HH:mm')
     let newCity = new City({
         name: cityInfo.location.name, 
-        updatedAt: cityInfo.current.last_updated, 
+        updatedAt: updatedAt, 
         temperature: cityInfo.current.temp_c,
         condition: cityInfo.current.condition.text,
         conditionPic: cityInfo.current.condition.icon,
     })
-    console.log(newCity)
+    newCity.updatedAt = moment(newCity.updatedAt, 'YYYY-MM-DD HH:mm.sss').format('DD.MM.YYYY HH:mm')
     res.send(newCity)
-
+} else {
+    res.send("no city was found")
+}
     })
 })
 
@@ -28,8 +37,7 @@ router.get('/cities', function(req, res){
 })
 
 router.post('/city', function (req, res) {
-    let cities = req.body 
-    // console.log(req.body)
+    let city = req.body 
     let newCity = new City({
         name: city.name, 
         updatedAt: city.updatedAt, 
@@ -37,7 +45,7 @@ router.post('/city', function (req, res) {
         condition: city.condition,
         conditionPic: city.conditionPic,
     })
-    console.log(cities)
+    console.log(city)
     newCity.save()
         res.end()
 
